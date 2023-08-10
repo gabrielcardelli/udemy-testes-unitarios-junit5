@@ -1,5 +1,7 @@
 package br.ce.wcaquino.barriga.service;
 
+import java.util.Optional;
+
 import br.ce.wcaquino.barriga.dominio.Usuario;
 import br.ce.wcaquino.barriga.dominio.exceptions.ValidationException;
 import br.ce.wcaquino.barriga.service.repositories.UsuarioRepository;
@@ -22,4 +24,8 @@ public class UsuarioService {
 		return usuarioRepository.salvar(usuario);
 	}
 
+	public Optional<Usuario> getUsuarioPorEmail(String email){
+		return usuarioRepository.getUsuarioPorEmail(email);
+	}
+	
 }
