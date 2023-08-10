@@ -7,5 +7,5 @@ public interface ContaEvent {
 		CREATED,UPDATED,DELETED
 	}
 	
-	void dispatch(Conta conta, EventType eventType);
+	void dispatch(Conta conta, EventType eventType) throws Exception;
 }

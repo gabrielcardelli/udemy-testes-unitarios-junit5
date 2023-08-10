@@ -11,8 +11,7 @@ import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
-import br.ce.wcaquino.barriga.dominio.Conta;
-import br.ce.wcaquino.barriga.dominio.Usuario;
+import br.ce.wcaquino.barriga.dominio.Transacao;
 
 
 /**
@@ -158,7 +157,7 @@ public class BuilderMaster {
 	@Test
 	public  void trst() {
 		BuilderMaster bm = new BuilderMaster();
-		bm.gerarCodigoClasse(Conta.class);
+		bm.gerarCodigoClasse(Transacao.class);
 	}
 	
 	

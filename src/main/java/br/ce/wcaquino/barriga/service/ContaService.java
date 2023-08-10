@@ -1,5 +1,6 @@
 package br.ce.wcaquino.barriga.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import br.ce.wcaquino.barriga.dominio.Conta;
@@ -31,9 +32,14 @@ public class ContaService {
 			}
 		});
 		
-		Conta contaSalva = repository.salvar(conta);
+		Conta contaSalva = repository.salvar(new Conta(conta.id(), conta.nome() + LocalDateTime.now(), conta.usuario()));
 		
-		event.dispatch(contaSalva, EventType.CREATED);
+		try {
+			event.dispatch(contaSalva, EventType.CREATED);
+		} catch (Exception e) {
+			repository.delete(contaSalva);
+			throw new RuntimeException("Falha na criação da conta, tente novamente");
+		}
 		
 		return contaSalva;
 	}

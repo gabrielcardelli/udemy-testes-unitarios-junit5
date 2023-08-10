@@ -51,5 +51,12 @@ public class Conta {
 		return Objects.equals(id, other.id) && Objects.equals(nome, other.nome)
 				&& Objects.equals(usuario, other.usuario);
 	}
+
+	@Override
+	public String toString() {
+		return "Conta [id=" + id + ", nome=" + nome + ", usuario=" + usuario + "]";
+	}
+	
+	
 	
 }

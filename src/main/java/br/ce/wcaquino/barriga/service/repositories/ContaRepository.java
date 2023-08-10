@@ -9,5 +9,7 @@ public interface ContaRepository {
 	Conta salvar(Conta conta);
 	
 	List<Conta> obterContasPorUsuario(Long id);
+	
+	void delete (Conta conta);
 
 }
